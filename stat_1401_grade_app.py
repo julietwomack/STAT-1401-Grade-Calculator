@@ -132,6 +132,7 @@ if quiz_num == 9:
     top_8_quizzes = quiz_list[:n]
     quiz_avg = sum(top_8_quizzes)/len(top_8_quizzes)
     st.subheader("Your quiz average is: {}".format(round(quiz_avg,2)))
+    st.markdown("- Your lowest quiz grade was {} and it will be dropped from your final course grade.".format(min(quiz_list)))
 
 # Test Grade
 st.markdown("____")
@@ -216,6 +217,7 @@ if (test_num == 4):
         unit_test[unit_test.index(min(unit_test))] = final_test
         all_tests = unit_test + final
         st.write("Your Final Exam __will replace__ your lowest unit test grade")
+        st.markdown("- Your lowest unit test grade was {} and will be replaced with your Final Exam grade".format(min(unit_test)))
         st.subheader("Your test average is: {}".format(sum(all_tests)/len(all_tests)))
         test_avg = sum(all_tests)/len(all_tests)
         st.markdown("____")
