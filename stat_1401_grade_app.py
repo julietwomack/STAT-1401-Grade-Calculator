@@ -8,7 +8,7 @@ st.header("Welcome!")
 st.markdown("Hello and welcome to the STAT 1401 grade calculator for Ms. Womack's class. This calculator will help you estimate your current or final grade in STAT 1401.")
 st.markdown("- __DISCLAIMER:__ By using this calculator, you agree that the results of this calculator are an __estimation__ of your grade and it is __not__ a guarentee of your final grade that will be posted on Owl Express at the end of the semester.")
 st.markdown("- This calculator does account for (1) dropping your lowest quiz grade when all 9 quiz grades are entered and (2) replacing your lowest unit test grade with the final exam grade if your final exam grade is higher than your lowest unit test grade.")
-st.markdown("- This calculator will only provide an (estimated) overall course average once you had entered in at least one test grade")
+st.markdown("- This calculator will __only__ provide an (estimated) overall course average once you had entered in __at least one test grade.__")
 st.markdown("If you have any questions about the course or your final grade, please contact Ms. Womack at [jwomac20@students.kennesaw.edu](mailto:jwomac20@students.kennesaw.edu)")
 
 # Homework Grade
@@ -132,7 +132,7 @@ if quiz_num == 9:
     top_8_quizzes = quiz_list[:n]
     quiz_avg = sum(top_8_quizzes)/len(top_8_quizzes)
     st.subheader("Your quiz average is: {}".format(round(quiz_avg,2)))
-    st.markdown("- Your lowest quiz grade was {} and it will be dropped from your final course grade.".format(min(quiz_list)))
+    st.markdown("- Your lowest quiz grade was __{}__ and it will be __dropped__ from your final course grade.".format(min(quiz_list)))
 
 # Test Grade
 st.markdown("____")
@@ -217,7 +217,7 @@ if (test_num == 4):
         unit_test[unit_test.index(min(unit_test))] = final_test
         all_tests = unit_test + final
         st.write("Your Final Exam __will replace__ your lowest unit test grade")
-        st.markdown("- Your lowest unit test grade was {} and will be replaced with your Final Exam grade".format(min_unit_test))
+        st.markdown("- Your lowest unit test grade was __{}__ and will be replaced with your Final Exam grade".format(min_unit_test))
         st.subheader("Your test average is: {}".format(sum(all_tests)/len(all_tests)))
         test_avg = sum(all_tests)/len(all_tests)
         st.markdown("____")
