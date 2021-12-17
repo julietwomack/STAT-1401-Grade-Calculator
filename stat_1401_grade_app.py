@@ -159,7 +159,8 @@ if test_num == 2:
     test_list = [t1, t2]
     test_avg = sum(test_list)/len(test_list)
     st.subheader("Your test average is: {}".format(round(test_avg,2)))
-    final_avg = (((hw*0.10) + (quiz_avg*0.10) + (test_list*0.40))/60)*100
+    weighted_grade = (hw*0.10)+(quiz_avg*0.10)+(test_avg*0.40)
+    final_avg = (weighted_grade/60)*100
     st.header("Your current course average is: {}".format(round(final_avg,2)))
 
 if test_num == 3:
