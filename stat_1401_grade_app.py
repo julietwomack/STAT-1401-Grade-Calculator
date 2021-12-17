@@ -217,7 +217,7 @@ if (test_num == 4):
         unit_test[unit_test.index(min(unit_test))] = final_test
         all_tests = unit_test + final
         st.write("Your Final Exam __will replace__ your lowest unit test grade")
-        st.markdown("- Your lowest unit test grade was {} and will be replaced with your Final Exam grade".format(min(unit_test)))
+        st.markdown("- Your lowest unit test grade was {} and will be replaced with your Final Exam grade".format(min_unit_test))
         st.subheader("Your test average is: {}".format(sum(all_tests)/len(all_tests)))
         test_avg = sum(all_tests)/len(all_tests)
         st.markdown("____")
