@@ -198,7 +198,7 @@ if (test_num == 4):
     if min_unit_test > final_test:
         all_tests = unit_test + final
         st.markdown("Your Final Exam __will not__ replace your lowest unit test grade")
-        st.subheader("Your test average is: {}".format(sum(all_tests)/len(all_tests)))
+        st.subheader("Your test average is: {}".format(round(sum(all_tests)/len(all_tests),2)))
         test_avg = sum(all_tests)/len(all_tests)
         st.markdown("____")
         final_avg = (hw*0.10)+(quiz_avg*.10)+(test_avg*0.80)
@@ -218,7 +218,7 @@ if (test_num == 4):
         all_tests = unit_test + final
         st.write("Your Final Exam __will replace__ your lowest unit test grade")
         st.markdown("- Your lowest unit test grade was __{}__ and will be replaced with your Final Exam grade".format(min_unit_test))
-        st.subheader("Your test average is: {}".format(sum(all_tests)/len(all_tests)))
+        st.subheader("Your test average is: {}".format(round(sum(all_tests)/len(all_tests),2)))
         test_avg = sum(all_tests)/len(all_tests)
         st.markdown("____")
         final_avg = (hw*0.10)+(quiz_avg*.10)+(test_avg*0.80)
