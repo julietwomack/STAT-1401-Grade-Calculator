@@ -8,6 +8,7 @@ st.header("Welcome!")
 st.markdown("Hello and welcome to the STAT 1401 grade calculator for Ms. Womack's class. This calculator will help you estimate your current or final grade in STAT 1401.")
 st.markdown("- __DISCLAIMER:__ By using this calculator, you agree that the results of this calculator are an __estimation__ of your grade and it is __not__ a guarentee of your final grade that will be posted on Owl Express at the end of the semester.")
 st.markdown("- This calculator does account for (1) dropping your lowest quiz grade when all 9 quiz grades are entered and (2) replacing your lowest unit test grade with the final exam grade if your final exam grade is higher than your lowest unit test grade.")
+st.markdown("- This calculator will only provide an (estimated) overall course average once you had entered in at least one test grade")
 st.markdown("If you have any questions about the course or your final grade, please contact Ms. Womack at [jwomac20@students.kennesaw.edu](mailto:jwomac20@students.kennesaw.edu)")
 
 # Homework Grade
@@ -158,7 +159,8 @@ if test_num == 2:
     test_list = [t1, t2]
     test_avg = sum(test_list)/len(test_list)
     st.subheader("Your test average is: {}".format(round(test_avg,2)))
-    st.header("Your current course average is: {}".format(round((((hw*0.10)+(quiz_avg*0.10)+(t1*0.20)+(t2*0.20))/60)*100),2))
+    final_avg = (((hw*0.10) + (quiz_avg*0.10) + (test_list*0.40))/60)*100
+    st.header("Your current course average is: {}".format(round(final_avg,2)))
 
 if test_num == 3:
     t1 = st.number_input("Unit 1 Test:", min_value=0.0, max_value=105.0)
